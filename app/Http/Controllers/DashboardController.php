@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -37,7 +38,17 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated_data = $request->validate([
+            'name'=>'required|max:255',
+            'username'=>['required', 'min:3', 'max:255', 'unique:users' ],
+            'email'=>['required','email:dns','unique:users'],
+            'password'=>'required|min:5|max:255',
+        ]);
+
+        $validated_data['password'] = bcrypt($validated_data['password']);
+
+        User::create($validated_data);
+        return redirect('/login')->with('success', 'Registration was successful!');
     }
 
     /**
