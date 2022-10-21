@@ -7,7 +7,6 @@
         <h1>SIPP-<span>JAFUNG</span></h1>
       </a>
       <nav id="navbar" class="navbar">
-       @auth
             <ul class=" ms-auto">
                 <li><a href="/dashboard" class="{{ Request::is('dashboard') ? 'active' : ''}}">Home</a></li>
                 <li><a href="/dashboard/upload" class="{{ Request::is('dashboard/upload') ? 'active' : ''}}">Persyaratan</a></li>
@@ -18,10 +17,10 @@
                         <i class="bi bi-person-circle"> </i>&nbsp; {{ auth()->user()->name }}</a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="/categories"><i class="bi bi-person-circle"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ url('/profile') }}"><i class="bi bi-person-circle"></i> Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
-                            <form action="/logout" method="POST" id="myForm">
+                            <form action="{{ url('logout') }}" method="get" id="myForm">
                                 @csrf
                                 <a href="#" onclick="document.getElementById('myForm').submit();"><i class="bi bi-box-arrow-right"></i> Logout</a>
                             </form>
@@ -29,18 +28,6 @@
                     </ul>
                 </li>
             </ul>
-        @else
-
-            <ul class=" ms-auto">
-                <li><a href="/">Home</a></li>
-                <li><a href="#">Persyaratan</a></li>
-            </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="/login" class="nav-link">Login</a>
-                </li>
-            </ul>
-        @endauth
 
     </nav><!-- .navbar -->
 

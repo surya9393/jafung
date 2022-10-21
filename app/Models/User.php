@@ -23,7 +23,10 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-        'photo'
+        'photo',
+        'phone',
+        'gender',
+        'level'
     ];
     public function posts()
     {
@@ -51,6 +54,6 @@ class User extends Authenticatable
 
     public function upload()
     {
-        return $this->belongsTo(Upload::class);
+        return $this->hasOne(Upload::class);
     }
 }

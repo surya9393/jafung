@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Upload;
+use App\Models\VerifUpload;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
@@ -185,6 +186,7 @@ class UploadController extends Controller
               // isi dengan nama folder tempat kemana file diupload
         $tujuan_upload = 'peta';
         $file_peta->move($tujuan_upload,$nama_peta);
+        $default_verif ='0';
 
         Upload::create([
             'user_id' => request('uid'),
@@ -204,7 +206,25 @@ class UploadController extends Controller
             'biografi' => $nama_biografi,
             'peta' => $nama_peta
         ]);
+        VerifUpload::create([
+            'upload_id'=> request('uid'),
+            's_ktp' => $default_verif,
+            's_npwp' => $default_verif,
+            's_skpns' => $default_verif,
+            's_skpangkat' => $default_verif,
+            's_skijazah' => $default_verif,
+            's_skjabatan' => $default_verif,
+            's_sksehat' => $default_verif,
+            's_suratpernyataan' => $default_verif,
+            's_disiplin' => $default_verif,
+            's_belajar' => $default_verif,
+            's_cuti' => $default_verif,
+            's_wirausaha' => $default_verif,
+            's_nilai' => $default_verif,
+            's_biografi' => $default_verif,
+            's_peta' => $default_verif
 
+        ]);
         return redirect()->back();
     }
     public function hapus($id){

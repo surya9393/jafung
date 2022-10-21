@@ -6,7 +6,7 @@
         <div class="col-lg-5">
             <main class="form-registration">
                 <h1 class="h3 mb-3 fw-normal text-center">Formulir Registrasi</h1>
-                <form action="/register" method="POST">
+                <form action="{{ url('/register') }}" method="POST">
                     @csrf
                     <div class="form-floating">
                         <input type="text" class="form-control rounded-top @error('name')
@@ -23,6 +23,29 @@
                         is-invalid @enderror" name="username" id="username" placeholder="Username">
                         <label for="floatingInput">Username</label>
                         @error('username')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" class="form-control rounded-top @error('phone')
+                         is-invalid @enderror" id="phone" placeholder="Name" name="phone">
+                        <label for="floatingInput">Nomor Telp</label>
+                        @error('phone')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                    <div class="form-floating">
+                        <select name="gender" id="gender01" class="form-select @error('gender')
+                        is-invalid @enderror">
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                         <label for="gender01">Jenis Kelamin</label>
+                        @error('gender')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
