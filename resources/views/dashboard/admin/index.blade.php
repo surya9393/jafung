@@ -8,7 +8,7 @@
                     <div class="col-xl-3 col-md-6">
 
                         <div class="card bg-primary text-white mb-4 text-center">
-                            <div class="card-body">Pendaftar</div>
+                            <div class="card-body">Management Pengguna</div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
                                 <a class="small text-white stretched-link" href="{{ url('/pendaftar') }}">Lihat</a>
                                 <div class="small text-white">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-xl-3 col-md-6 text-center">
                         <div class="card bg-secondary text-white mb-4">
-                            <div class="card-body">Verifikasi</div>
+                            <div class="card-body">Pendaftar & Verifikasi</div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
                                 <a class="small text-white stretched-link" href="{{ url('/verifikasi') }}">Lihat</a>
                                 <div class="small text-white">

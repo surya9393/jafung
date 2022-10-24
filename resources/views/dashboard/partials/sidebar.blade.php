@@ -28,7 +28,7 @@
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('dashboard/pengumuman') ? 'active' : ''}}" href="#">
                     <span data-feather="file-text" class="align-text-bottom"></span>
-                    Jadwal Test
+                    Infomasi
                     </a>
                 </li>
                 <li class="nav-item">

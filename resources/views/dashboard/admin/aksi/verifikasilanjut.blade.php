@@ -2,7 +2,7 @@
 @section('content')
     <div class="row mt-5">
         <div class="container">
-            <h1 class="text-center">List Pendaftar SIPPJAFUNG</h1>
+            <h1 class="text-center">List Pendaftar</h1>
             <div class="d-flex justify-content-md-end">
                 <a href="{{ url('/admin') }}" class="btn btn-primary m-2">Kembali</a>
                 <a href="{{ url('/cetak/pendaftar') }}" class="btn btn-success m-2">Cetak</a>

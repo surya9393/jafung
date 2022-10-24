@@ -1,4 +1,4 @@
-    <table class="text-center table-bordered m-5">
+    <table class="table ">
         <div>
             <tr>
                 <th>No</th>
@@ -36,11 +36,28 @@
                     @if (empty($getdata->ktp))
                         <p>Data Tidak Ada</p>
                     @else
-                    <div class="d-grid">
-                        <a class="btn btn-success" href="/dashboard/upload/lihat/{{ $getdata->id }}">Lihat</a><br/>
-                        <a class="btn btn-warning" href="/dashboard/upload/edit/{{ $getdata->id }}">Edit</a><br/>
-                        <a class="btn btn-danger" href="/dashboard/upload/hapus/{{ $getdata->id }}">Hapus</a>
-                    </div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <div class="modal fade"  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="staticBackdropLabel">KTP</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe src="/ktp/{{ $getdata->ktp }}" frameborder="0" width="800" height="600"></iframe>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Understood</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <a href="#" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                    <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                     @endif
                 </td>
             </tr>

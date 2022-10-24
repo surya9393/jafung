@@ -1,5 +1,6 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">SIPPJAFUNG ADMIN</a>
+    <img src="{{ asset('assets/img/logo.png') }}" alt="" width="40" class="m-2">
+    <a class="navbar-brand" href="#">ADMIN SIPERIWAUSAHA</a>
     <!-- Navbar Search-->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">

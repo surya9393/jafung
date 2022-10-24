@@ -2661,10 +2661,11 @@ section {
 }
 
 .footer h4 {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   position: relative;
   padding-bottom: 12px;
+  color: #fff;
 }
 
 .footer .footer-links {

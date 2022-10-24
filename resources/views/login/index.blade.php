@@ -20,8 +20,9 @@
 
 
             <main class="form-signin w-100 m-auto">
-                <h1 class="h3 mb-3 fw-normal text-center">SIPPJAFUNG</h1>
-                <h5 class="mb-3 fw-normal text-center">Login</h5>
+                <h5 class="mb-3 fw-normal text-center">Sistem Informasi</h5>
+                <h5 class="mb-3 fw-normal text-center">Pengembang Wirausaha</h5>
+                <hr class="mb-5">
                 <form action="{{ url('/login/proses') }}" method="POST">
                     @csrf
                 <div class="form-floating">
@@ -46,4 +47,5 @@
     </div>
 </div>
 </section>
+@include('partials.footer')
 @endsection

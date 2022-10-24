@@ -8,7 +8,7 @@
       </a>
       <nav id="navbar" class="navbar">
             <ul class=" ms-auto">
-                <li><a href="/dashboard" class="{{ Request::is('dashboard') ? 'active' : ''}}">Home</a></li>
+                <li><a href="/pengguna" class="{{ Request::is('dashboard') ? 'active' : ''}}">Home</a></li>
                 <li><a href="/dashboard/upload" class="{{ Request::is('dashboard/upload') ? 'active' : ''}}">Persyaratan</a></li>
             </ul>
             <ul class="navbar-nav">
